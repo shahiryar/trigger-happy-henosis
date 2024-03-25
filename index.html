@@ -13,7 +13,8 @@
       project-id="abacus-chatbot"
       agent-id="d55019bc-96a6-4981-956d-a511b837f1b7"
       language-code="en"
-      max-query-length="-1">
+      max-query-length="-1"
+      id="df-messenger-pxd">
       
         <df-messenger-chat-bubble
           chat-title="Trigger-happy">
@@ -37,8 +38,28 @@
       console.log("messenger is now read")
     });
 
+    const checkoutButton = document.getElementById('checkout');
+    let hoverTimeout;
+
     window.addEventListener('df-chat-open-changed', (event) => {
       console.log(`Chat is ${event.detail.isOpen ? 'open' : 'closed'}`);
     });
+
+    const hesitantIntent = () => {
+      const chatbox = document.getElementById('df-messenger-pxd');
+      chatbox.setAttribute("intent", "Hesitant Checkout");
+      console.log("Intent added to the messenger")
+    }
+
+    checkoutButton.addEventListener('mouseover', () => {
+    hoverTimeout = setTimeout(hesitantIntent, 3000); // Trigger after 3 seconds
+    });
+
+    checkoutButton.addEventListener('mouseout', () => {
+      clearTimeout(hoverTimeout); // Cancel the trigger if the mouse moves out
+    });
+
+    
+    
   </script>
 </html>
