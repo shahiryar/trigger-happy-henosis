@@ -1,9 +1,33 @@
 <html>
-  <head><title>Henosis</title></head>
+  <head>
+    <title>Henosis</title>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  </head>
   <body>
-    <h1>Trigger the Chatbot: Act Hesitant Checkout</h1>
-    <div >
-      <button>Checkout</button>
-    </div>
+      <h1>Trigger the Chatbot: Act Hesitant Checkout</h1>
+      <div >
+        <button>Checkout</button>
+      </div>
+    <df-messenger
+      project-id="abacus-chatbot"
+      agent-id="d55019bc-96a6-4981-956d-a511b837f1b7"
+      language-code="en"
+      max-query-length="-1">
+      
+        <df-messenger-chat-bubble
+          chat-title="Trigger-happy">
+        </df-messenger-chat-bubble>
+      
+    </df-messenger>
+    
+    <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+    }
+    </style>
   </body>
 </html>
