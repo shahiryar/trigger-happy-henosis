@@ -49,6 +49,9 @@
       const chatbox = document.getElementById('df-messenger-pxd');
       chatbox.setAttribute("intent", "Hesitant Checkout");
       console.log("Intent added to the messenger")
+      console.log("Opening the chatbox")
+      const dfMessengerBubble = document.querySelector('df-messenger-chat-bubble');
+      dfMessengerBubble.openChat();
     }
 
     checkoutButton.addEventListener('mouseover', () => {
