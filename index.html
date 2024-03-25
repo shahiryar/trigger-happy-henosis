@@ -52,10 +52,12 @@
     }
 
     checkoutButton.addEventListener('mouseover', () => {
+      console.log("Hover timer started")
     hoverTimeout = setTimeout(hesitantIntent, 3000); // Trigger after 3 seconds
     });
 
     checkoutButton.addEventListener('mouseout', () => {
+      console.log("Hover event cancelled")
       clearTimeout(hoverTimeout); // Cancel the trigger if the mouse moves out
     });
 
